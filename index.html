@@ -75,14 +75,14 @@ ol.rules{padding-left:20px;max-width:70ch}ol.rules li{margin-bottom:8px}
 <div class="eyebrow">Tanaor · Checkout Champ · Designer &amp; Dev Brief</div>
 <h1>Post-Purchase Upsell Flow</h1>
 <p class="lede">One-click offers shown after the card is charged and before the receipt. Two entry paths, driven by which collection the front-end order came from. Every offer is a one-time price that never repeats: 50% off the compare-at price shown on tanaorjewelry.com. Design and page behavior must match the Plateful example exactly.</p>
-<div class="meta"><div>Owner <b>Gal Yaacobi</b></div><div>Platform <b>Checkout Champ</b></div><div>Reference <b>Plateful VSL post-purchase</b></div><div>Status <b>v2 · 17 Sep 2026 · 6 open questions</b></div></div>
+<div class="meta"><div>Owner <b>Gal Yaacobi</b></div><div>Platform <b>Checkout Champ</b></div><div>Reference <b>Plateful VSL post-purchase</b></div><div>Status <b>v3 · 17 Sep 2026 · 2 items pending from Gal</b></div></div>
 
 <h2>Routing rule</h2>
 <div class="tbl"><table>
 <tr><th>Front-end order contains</th><th>Path</th><th>Pages shown</th></tr>
 <tr><td>Any item from the <b>regular collection</b> (18K gold plated over brass, sterling silver)</td><td class="mono">PATH A</td><td>3 upsells + 2 downsells, plus Bible Box · max 4 pages seen</td></tr>
 <tr><td>Only items from the <b>premium collection</b> (14K solid gold, diamonds)</td><td class="mono">PATH B</td><td>2 upsells + 1 downsell, plus Bible Box · max 3 pages seen</td></tr>
-<tr><td>Mixed cart (regular + premium)</td><td class="mono">PATH A</td><td>Upgrade offer targets the regular item <span class="q">Q6</span></td></tr>
+<tr><td>Mixed cart (regular + premium)</td><td class="mono">PATH A</td><td>Upgrade offer targets the <b>highest-value non-premium item</b> in the cart</td></tr>
 <tr><td>Cart has <b>no Bible Box</b> (gift box)</td><td class="mono">BOTH</td><td>Bible Box offer is added as the last step of the path at 50% off. If the cart already has a Bible Box, this step is skipped.</td></tr>
 </table></div>
 
@@ -146,16 +146,16 @@ ol.rules{padding-left:20px;max-width:70ch}ol.rules li{margin-bottom:8px}
 <div class="price mono">Example · Sacred Cross yellow: premium compare-at $X → today $X/2. SKU map coming from Gal.</div></div>
 
 <div class="card up"><div class="code">Page 2 · A-U2 / A-D1</div><h3>More of the same (regular)</h3>
-<dl class="kv"><dt>Product</dt><dd>A second unit of the exact regular item just bought. Dynamic.</dd><dt>Offer</dt><dd>50% off the regular compare-at price, one time only</dd><dt>Variant</dt><dd>Locked to purchased variant, or color picker? <span class="q">Q4</span></dd><dt>Copy angle</dt><dd>Upsell state: "Give one. 70% of our customers buy this as a gift." Downsell state: "Not ready for solid gold? Then get a second one for someone you love, at half price."</dd><dt>Decline link</dt><dd>"No thanks, one is enough for now"</dd></dl></div>
+<dl class="kv"><dt>Product</dt><dd>A second unit of the exact regular item just bought. Dynamic.</dd><dt>Offer</dt><dd>50% off the regular compare-at price, one time only</dd><dt>Variant</dt><dd>Exactly the variant bought. Same design, same color. No color picker, no quantity selector.</dd><dt>Copy angle</dt><dd>Upsell state: "Give one. 70% of our customers buy this as a gift." Downsell state: "Not ready for solid gold? Then get a second one for someone you love, at half price."</dd><dt>Decline link</dt><dd>"No thanks, one is enough for now"</dd></dl></div>
 
 <div class="card up"><div class="code">Page 3 · A-U3 / A-D2 / B-U2 / B-D1</div><h3>Serenity bracelet</h3>
-<dl class="kv"><dt>Product</dt><dd>Serenity bracelet. Static product, same on every path. <span class="q">Q5</span></dd><dt>Offer</dt><dd>50% off, one time only</dd><dt>Copy angle</dt><dd>Anxiety relief and daily reminder: "When I feel anxious I reach up and touch it." Completes the set: necklace for the heart, bracelet for the hand.</dd><dt>Decline link</dt><dd>"No thanks, take me to my receipt"</dd><dt>Note</dt><dd>Serves as last page on both paths, in both upsell and downsell copy states. One template, two copy states.</dd></dl></div>
+<dl class="kv"><dt>Product</dt><dd>Serenity bracelet. Static product, same on every path. SKU and compare-at price: pending from Gal.</dd><dt>Offer</dt><dd>50% off, one time only</dd><dt>Copy angle</dt><dd>Anxiety relief and daily reminder: "When I feel anxious I reach up and touch it." Completes the set: necklace for the heart, bracelet for the hand.</dd><dt>Decline link</dt><dd>"No thanks, take me to my receipt"</dd><dt>Note</dt><dd>Serves as last page on both paths, in both upsell and downsell copy states. One template, two copy states.</dd></dl></div>
 
 <div class="card pr"><div class="code">Page 4 · B-U1</div><h3>More of the same (premium)</h3>
 <dl class="kv"><dt>Product</dt><dd>A second unit of the exact premium item just bought. Dynamic.</dd><dt>Offer</dt><dd>50% off the premium compare-at price, one time only</dd><dt>Copy angle</dt><dd>"Two hearts, one Word." Matching set for a spouse, mother, daughter. Premium buyers are the 70% gift-buyer segment at its strongest.</dd><dt>Decline link</dt><dd>"No thanks, I only need one"</dd></dl></div>
 
 <div class="card up"><div class="code">Page 5 · A-U4 / A-D3 / B-U3 / B-D2</div><h3>Bible Box</h3>
-<dl class="kv"><dt>Product</dt><dd>Tanaor Bible Box gift box. Static product. Shown only when the cart has no Bible Box.</dd><dt>Offer</dt><dd>50% off compare-at, one time only. Target price <span class="q">Q7</span></dd><dt>Copy angle</dt><dd>"70% of you are giving this as a gift. Make the moment she opens it unforgettable." Gift reveal, "she teared up when she opened it".</dd><dt>Decline link</dt><dd>"No thanks, take me to my receipt"</dd><dt>Note</dt><dd>Last step on both paths. Position <span class="q">Q8</span></dd></dl></div>
+<dl class="kv"><dt>Product</dt><dd>Tanaor Bible Box gift box. Static product. Shown only when the cart has no Bible Box.</dd><dt>Offer</dt><dd>50% off compare-at, one time only. Price: pending from Gal.</dd><dt>Copy angle</dt><dd>"70% of you are giving this as a gift. Make the moment she opens it unforgettable." Gift reveal, "she teared up when she opened it".</dd><dt>Decline link</dt><dd>"No thanks, take me to my receipt"</dd><dt>Note</dt><dd>Last step on both paths, after Serenity, regardless of the Serenity answer.</dd></dl></div>
 
 <div class="card"><div class="code">Page 6 · Receipt</div><h3>Order confirmation</h3>
 <dl class="kv"><dt>Content</dt><dd>All accepted line items, original plus upsells, one order, one total. Shipping and billing. "The charge will appear as TANAOR."</dd><dt>Certificate</dt><dd>Mention the certificate of authenticity from the US Nano-Science Center. Never show the printed card open.</dd></dl></div>
@@ -169,7 +169,7 @@ ol.rules{padding-left:20px;max-width:70ch}ol.rules li{margin-bottom:8px}
 <tr><td>Top bar</td><td>Red "Do NOT close this window. Your order is processing"</td><td>Keep the bar and its function. Tanaor colors.</td></tr>
 <tr><td>Progress breadcrumb</td><td>Checkout → Special Offers → Order Receipt</td><td>Keep exactly. Tells the customer the receipt is coming, which lowers anxiety and raises patience.</td></tr>
 <tr><td>Wait banner</td><td>"WAIT! Your order is not completed yet"</td><td>"Wait, your one-time offer is ready." No stop-sign emoji. Offer-first, not fear-first.</td></tr>
-<tr><td>Video gate</td><td>VSL plays before the offer is revealed</td><td><b>Required on every upsell and downsell page, exactly like Plateful.</b> Talking-head VSL plays with the offer hidden. At the moment the actor says "click now" or presents the offer, the offer section unhides and the page auto-scrolls to it. Video length per page is set by the script. <span class="q">Q9</span></td></tr>
+<tr><td>Video gate</td><td>VSL plays before the offer is revealed</td><td><b>Required on every upsell and downsell page, exactly like Plateful.</b> Talking-head VSL plays with the offer hidden. At the moment the actor says "click now" or presents the offer, the offer section unhides and the page auto-scrolls to it. Every upsell and every downsell has its own video. There is no skip: the offer does not exist on the page until the cue fires.</td></tr>
 <tr><td>Offer card</td><td>Product image, included items list, 3 checkmarks, strike-through price, timer, green CTA</td><td>Same skeleton. Jewelry on model plus macro of the Bible chip. Checkmarks: solid 14K not plated · certificate of authenticity · lifetime warranty. Price in tabular figures.</td></tr>
 <tr><td>Timer</td><td>"Your one-time price reserved for 00:48"</td><td>Keep, 5 minutes, real countdown. The offer genuinely expires on leaving the page.</td></tr>
 <tr><td>CTA</td><td>"Add $499 to complete your 8-piece set"</td><td>State the exact charge: "Yes, upgrade me for $X". One click, card on file, no re-entry.</td></tr>
@@ -191,17 +191,16 @@ ol.rules{padding-left:20px;max-width:70ch}ol.rules li{margin-bottom:8px}
 <li>Upgrade backend: swap or add-and-charge-difference, whichever is simpler in Checkout Champ. Frontend must read as an upgrade of the piece just bought.</li>
 <li>Discount rule: every offer is 50% off the compare-at price on tanaorjewelry.com. Not "extra 30%". Compare-at prices are pulled from Shopify.</li>
 <li>Video on every upsell and downsell page, hidden offer, auto-scroll reveal, exactly like Plateful. Plus a no-video variant of every page for the test.</li>
-<li>Bible Box is offered at 50% off as the last step, only when the cart has no Bible Box.</li>
+<li>Bible Box is offered at 50% off as the last step on both paths, only when the cart has no Bible Box.</li>
+<li>"More of the same" is the exact variant bought. No color choice, quantity 1.</li>
+<li>Mixed cart (regular + premium): Path A. The upgrade targets the highest-value non-premium item in the cart.</li>
+<li>Each upsell and each downsell gets its own video. The offer is hidden until the "click now" cue. The customer has to watch to reach the offer.</li>
 </ol>
 
-<h2>Open questions for Gal · resolve before design starts</h2>
+<h2>Pending from Gal</h2>
 <div class="questions">
-<div class="qcard"><b>Q4 · "More of the same" variant</b>Locked to the exact variant bought, or a color picker and quantity selector like Plateful's?<div class="assume">Board assumes: same variant, quantity 1, color switch allowed.</div></div>
-<div class="qcard"><b>Q5 · Serenity bracelet SKU and price</b>Which Serenity variant is offered, and what list price does the 50% apply to?</div>
-<div class="qcard"><b>Q7 · Bible Box price</b>You wrote "999". Is the target price $9.99, and what is the Bible Box compare-at price on the site today? 50% off must land on that number.</div>
-<div class="qcard"><b>Q8 · Bible Box position</b>The board puts it last on both paths, after Serenity, and shows it whether Serenity was accepted or declined. Do you want it earlier, for example right after the upgrade, where more customers still see it?<div class="assume">Board assumes: last step, both paths.</div></div>
-<div class="qcard"><b>Q9 · Downsell videos</b>Does each downsell get its own short video ("not ready for solid gold? here is another way…"), or the same video as its upsell twin? Own videos means 3 extra scripts and shoots.<div class="assume">Board assumes: own short video per downsell.</div></div>
-<div class="qcard"><b>Q6 · Mixed carts and the decline-after-decline case</b>If a cart has regular and premium, which path? And after declining A-D1, do they see A-D2 (Serenity) or go straight to receipt?<div class="assume">Board assumes: Path A, and yes, Serenity is shown.</div></div>
+<div class="qcard"><b>Serenity bracelet</b>SKU and compare-at price. The offer price is 50% of compare-at.</div>
+<div class="qcard"><b>Bible Box</b>Compare-at price. The offer price is 50% of compare-at.</div>
 </div>
 
 <h2>Reference · Plateful post-purchase (screen recording, 32 min)</h2>
@@ -220,7 +219,8 @@ ol.rules{padding-left:20px;max-width:70ch}ol.rules li{margin-bottom:8px}
 <li>Every accept is a one-click charge to the card on file. No re-entering payment. Shipping is merged into the original order, one tracking number.</li>
 <li>An offer is shown at most once per order. Back button, refresh or closing the tab must not re-show a declined or accepted offer.</li>
 <li>Downsell pages reuse the upsell page template with a second copy state and their own video.</li>
-<li>Video reveal: the offer section is hidden on load. A timestamp cue on the video (set per page) unhides the offer and smooth-scrolls to it. The customer can also scroll manually. Variant B skips the video entirely.</li>
+<li>Video reveal: the offer section does not render on load. A timestamp cue on the video, set per page, injects the offer and smooth-scrolls to it. There is no way to reach the offer before the cue. Variant B (straight OTO) has no video and shows the offer on load.</li>
+<li>Mixed cart: pick the highest-value line item whose collection is not premium, and build the upgrade page from that item and its premium twin.</li>
 <li>Bible Box step checks the cart for a Bible Box line item and skips itself if found.</li>
 <li>The timer is real. When it hits zero, the CTA disables and the page advances to the next step.</li>
 <li>Receipt lists every accepted item. Klaviyo order confirmation fires once, after the last offer, not after the front-end charge.</li>
